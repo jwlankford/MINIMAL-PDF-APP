@@ -28,13 +28,13 @@ This is a simple Vue 3 application that generates PDF letters based on user inpu
 1.  **Start the development server:**
 
     ```bash
-    npm run dev
+    npm run serve
     ```
 
     or if you are using pnpm:
 
     ```bash
-    pnpm run dev
+    pnpm run serve
     ```
 
 2.  **Open the application in your browser:**
