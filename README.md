@@ -67,3 +67,35 @@ This is a simple Vue 3 application that generates PDF letters based on user inpu
     ```
 
 ## Project Structure
+
+**Key Directories and Files Explained:**
+
+* **`public/`**:
+    * This directory contains static assets that are served directly by Vite.
+    * `favicon.ico` is the application's icon displayed in the browser tab.
+* **`src/`**:
+    * This is the core directory containing all the application's source code.
+    * **`components/`**:
+        * Holds reusable Vue components. In this project, `FirstNameInput.vue` is a custom input field component.
+    * **`tests/`**:
+        * Contains unit tests for Vue components. `App.test.js` tests the `App.vue` component.
+    * **`App.vue`**:
+        * The main application component that orchestrates the UI and functionality.
+    * **`App.css`**:
+        * Global CSS styles for the application.
+    * **`main.js`**:
+        * The entry point of the Vue 3 application, where the Vue instance is created and mounted.
+    * **`assets/`**:
+        * Stores static assets like images and icons.
+* **`index.html`**:
+    * The main HTML file that serves as the entry point for the application.
+* **`package.json`**:
+    * Contains project metadata, dependencies, and scripts.
+* **`package-lock.json` / `pnpm-lock.yaml`**:
+    * Lockfiles that ensure consistent dependency versions across installations.
+* **`README.md`**:
+    * Provides project documentation, including installation and usage instructions.
+* **`vitest.config.js`**:
+    * This file contains the configuration for the vitest testing framework.
+
+This structure helps to organize the project, making it easier to navigate, maintain, and scale.
