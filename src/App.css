@@ -1,0 +1,108 @@
+.letter-generator {
+    font-family: sans-serif;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .input-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-top: 10px;
+  }
+  
+  input,
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .input-row {
+    display: flex;
+    align-items: center; /* Vertically align label and input */
+    margin-bottom: 10px; /* Add space between rows */
+  }
+  
+  .input-row label {
+    margin-right: 10px; /* Add some spacing between label and input */
+    margin-top: 0; /* Override default label margin-top */
+    flex-shrink: 0; /* Prevent label from shrinking */
+    width: 100px; /* Adjust label width as needed */
+  }
+  
+  .input-row input,
+  .input-row select {
+    flex: 1; /* Allow input to take up remaining space */
+  }
+  
+  .city-state-zip {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .city-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .city-container,
+  .state-container,
+  .zip-container {
+    flex: 1 1 auto;
+  }
+  
+  .city-input,
+  .city-error {
+    width: 90%;
+  }
+  
+  .state-label,
+  .state-select,
+  .state-error {
+    width: 50%;
+  }
+  
+  .zip-label,
+  .zip-input,
+  .zip-error {
+    width: 20%;
+  }
+  
+  button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .pdf-preview {
+    margin-top: 20px;
+    border: 1px solid #eee;
+    padding: 10px;
+  }
+  
+  .error {
+    color: red;
+  }

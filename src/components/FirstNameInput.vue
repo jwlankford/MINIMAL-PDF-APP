@@ -7,6 +7,7 @@
   </template>
   
   <script>
+  import '../App.css'; // Import the CSS file
   export default {
     props: {
       modelValue: String,
@@ -16,8 +17,5 @@
   };
   </script>
   
-  <style scoped>
-  .error {
-    color: red;
-  }
-  </style>
+
+ 

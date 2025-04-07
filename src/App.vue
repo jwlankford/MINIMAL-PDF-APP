@@ -3,18 +3,18 @@
     <h1>PDF Letter Generator</h1>
 
     <div class="input-form">
-      <label for="firstName">First Name:</label>
-      <input type="text" id="firstName" v-model="formData.firstName" />
-      <p v-if="errors.firstName" class="error">{{ errors.firstName }}</p>
 
-      <label for="lastName">Last Name:</label>
-      <input type="text" id="lastName" v-model="formData.lastName" />
-      <p v-if="errors.lastName" class="error">{{ errors.lastName }}</p>
-
-      <label for="address">Address:</label>
-      <textarea id="address" v-model="formData.address"></textarea>
-      <p v-if="errors.address" class="error">{{ errors.address }}</p>
-
+      <FirstNameInput v-model="formData.firstName" :error="errors.firstName" />
+      <div class="last-name-row">
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" v-model="formData.lastName" />
+        <p v-if="errors.lastName" class="error">{{ errors.lastName }}</p>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: flex-start;">
+        <label for="address">Address:</label>
+        <textarea id="address" v-model="formData.address"></textarea>
+        <p v-if="errors.address" class="error">{{ errors.address }}</p>
+      </div>
       <div class="city-state-zip">
         <div class="city-container">
           <label for="city">City:</label>
@@ -57,8 +57,13 @@
 
 <script>
 import { PDFDocument, rgb, StandardFonts } from 'pdf-lib';
+import FirstNameInput from './components/FirstNameInput.vue';
+import './App.css'; // Import the CSS file
 
 export default {
+  components: {
+    FirstNameInput, // Register the component here
+  },
   data() {
     return {
       formData: {
@@ -223,76 +228,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.letter-generator {
-  font-family: sans-serif;
-  max-width: 600px;
-  margin: 20px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.input-form {
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  margin-top: 10px;
-}
-
-input,
-textarea,
-select {
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.city-state-zip {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.city-container, .state-container, .zip-container {
-  flex: 1 1 auto;
-}
-
-.city-input, .city-error {
-  width: 30%;
-}
-
-.state-label, .state-select, .state-error {
-  width: 9%;
-}
-
-.zip-label, .zip-input, .zip-error {
-  width: 12%;
-}
-
-button {
-  padding: 10px 15px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-.pdf-preview {
-  margin-top: 20px;
-  border: 1px solid #eee;
-  padding: 10px;
-}
-
-.error {
-  color: red;
-}
-</style>
